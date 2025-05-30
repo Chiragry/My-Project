@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+.container{
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2),
+                inset 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); 
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    position: absolute;
+    background: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--clr);
+    transform-origin: bottom;
+    transition: all 0.3s ease;
+}
+
+/* Add hover effect */
+.clock:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Add pulse animation to center dot */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.clock::before {
+    animation: pulse 2s infinite;
+}
+
+/* Add glow effect to numbers */
+.clock span b:hover {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Weather Container Styles */
+.weather-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.weather-container:hover {
+    transform: translateY(-5px);
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.temperature {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.weather-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-icon {
+    font-size: 2em;
+}
+
+.weather-description {
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.humidity, .wind {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.humidity i, .wind i {
+    color: #00a6ff;
+}
+
+/* Weather-based background colors */
+body.clear {
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+}
+
+body.cloudy {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+}
+
+body.rainy {
+    background: linear-gradient(45deg, #2c3e50, #1a1a1a);
+}
+
+body.snowy {
+    background: linear-gradient(45deg, #34495e, #2c3e50);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .weather-container {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 20px auto;
+        max-width: 300px;
+    }
+}
