@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome - Form Validation</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <header class="signup-header">
+          <h1>Welcome!</h1>
+        </header>
+        <main class="signup-body">
+          <p style="text-align: center; font-size: 1.2rem; margin: 20px 0;">
+            You have successfully logged in.
+          </p>
+          <p style="text-align: center;">
+            <button onclick="logout()" style="
+              padding: 10px 20px;
+              background-color: #3498db;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 16px;
+            ">Logout</button>
+          </p>
+        </main>
+      </div>
+    </div>
+    <script>
+      function logout() {
+        // Clear any stored data
+        localStorage.removeItem('userData');
+        // Redirect to login page
+        window.location.href = 'login.html';
+      }
+    </script>
+  </body>
+</html> 
