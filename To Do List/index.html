@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Advanced Quiz App</title>
+</head>
+<body>
+    <div class="alert">Alert</div>
+    
+    <!-- Welcome Screen -->
+    <div class="welcome-screen">
+        <h1>Advanced Quiz App</h1>
+        <div class="difficulty-selection">
+            <h2>Select Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+        </div>
+        <div class="category-selection">
+            <h2>Select Category</h2>
+            <div class="category-buttons">
+                <button class="category-btn" data-category="all">All Categories</button>
+                <button class="category-btn" data-category="logical">Logical</button>
+                <button class="category-btn" data-category="analytical">Analytical</button>
+                <button class="category-btn" data-category="critical">Critical Thinking</button>
+            </div>
+        </div>
+        <div class="btn startBtn">Start Quiz</div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="container">
+        <div class="quiz-header">
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="quiz-info">
+                <div class="category-display"></div>
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span class="time-left">60</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h1>Let's Test Your Reasoning Skills!</h1>
+            <div class="question"></div>
+            <div class="choices"></div>
+            <button class="btn nextBtn">Next</button>
+            <div class="scoreCard"></div>
+        </div>
+
+        <!-- High Scores Section -->
+        <div class="high-scores">
+            <h2>High Scores</h2>
+            <div class="scores-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
